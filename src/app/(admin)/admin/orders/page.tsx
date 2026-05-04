@@ -307,7 +307,7 @@ export default function OrdersPage() {
                 {order.items?.map((item) => (
                   <div key={item.id} className="flex justify-between items-center px-3.5 py-3 bg-surface border border-surface-border rounded-xl">
                     <div>
-                      <div className="font-semibold text-[13px] text-main-text">{item.name}</div>
+                      <div className="font-semibold text-[13px] text-main-text">{item.name_th}</div>
                       <div className="text-[11px] text-text-faint">Qty: {item.quantity} × ฿{item.price?.toLocaleString()}</div>
                     </div>
                     <span className="font-bold text-[13px] text-main-text">฿{item.subtotal?.toLocaleString()}</span>
