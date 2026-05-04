@@ -36,8 +36,13 @@ async function request<T>(path: string, options: FetchOptions = {}): Promise<T> 
   const { params, ...fetchOptions } = options;
   const token = await getAuthToken();
   const isServer = typeof window === "undefined";
-
-  const cleanBaseUrl = BASE_URL.replace(/\/api\/v1\/?$/, "").replace(/\/+$/, "");
+  
+  // Authoritative server-side internal URL
+  const internalBaseUrl = "http://backend:4001";
+  const cleanBaseUrl = (isServer ? internalBaseUrl : BASE_URL)
+    .replace(/\/api\/v1\/?$/, "")
+    .replace(/\/+$/, "");
+    
   const cleanPath = path.startsWith("/") ? path : `/${path}`;
 
   let url = isServer ? `${cleanBaseUrl}/api/v1${cleanPath}` : `/api/v1${cleanPath}`;
