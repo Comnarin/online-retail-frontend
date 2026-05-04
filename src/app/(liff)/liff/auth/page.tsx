@@ -13,12 +13,12 @@ function AuthHandshakeContent() {
   useEffect(() => {
     const runHandshake = async () => {
       try {
-        const liffId = process.env.NEXT_PUBLIC_LIFF_ID || "";
+        const liffId = process.env.LIFF_ID || "";
         // Robust TenantID resolution
         // LIFF redirects (liff.state) often double-encode params or nest them deeply.
         const resolveTenantId = (): string | null => {
           const rawSearch = typeof window !== "undefined" ? window.location.search : "";
-          
+
           // Iterative decoding to handle double/triple encoding
           let currentStr = rawSearch;
           let prevStr = "";
@@ -76,8 +76,8 @@ function AuthHandshakeContent() {
 
         // Verify the cookie arrived by probing a lightweight endpoint
         // This ensures the browser has committed the HttpOnly cookie
-        const cookieVerifyResp = await fetch("/api/auth/verify", { 
-          credentials: "include" 
+        const cookieVerifyResp = await fetch("/api/auth/verify", {
+          credentials: "include"
         });
         const cookieVerify = await cookieVerifyResp.json();
 

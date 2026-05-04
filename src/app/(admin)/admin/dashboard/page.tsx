@@ -1,4 +1,5 @@
 import React from "react";
+export const dynamic = 'force-dynamic';
 import { liffApi, dashboardApi, ordersApi } from "@/lib/api";
 import StatusBadge from "@/components/shared/StatusBadge";
 import Link from "next/link";
