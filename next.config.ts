@@ -4,6 +4,7 @@ import createNextIntlPlugin from "next-intl/plugin";
 const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
 
 const nextConfig: NextConfig = {
+  output: 'standalone',
   images: {
     remotePatterns: [
       { protocol: "https", hostname: "**" },
@@ -11,7 +12,7 @@ const nextConfig: NextConfig = {
   },
   allowedDevOrigins: ["*.trycloudflare.com"],
   async rewrites() {
-    const backendUrl = process.env.NEXT_PUBLIC_API_URL?.replace(/\/+$/, "") || "http://localhost:8080";
+    const backendUrl = process.env.NEXT_PUBLIC_API_URL?.replace(/\/+$/, "");
     return [
       {
         source: "/api/v1/:path*",
