@@ -12,7 +12,9 @@ const nextConfig: NextConfig = {
   },
   allowedDevOrigins: ["*.trycloudflare.com"],
   async rewrites() {
-    const backendUrl = process.env.NEXT_PUBLIC_API_URL?.replace(/\/+$/, "");
+    // Inside the Docker network, use the service name 'backend'
+    // In the browser, use the public IP
+    const backendUrl = process.env.NEXT_PUBLIC_API_URL?.replace(/\/+$/, "") || "http://backend:4001";
     return [
       {
         source: "/api/v1/:path*",
