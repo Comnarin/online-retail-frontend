@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700&family=Inter:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+/* ═══════════════════════════════════════════════════
+   THE DIGITAL CURATOR — Unified Design System
+   Single source of truth for all apps.
+   ═══════════════════════════════════════════════════ */
+
+/* ── DESIGN TOKENS ──────────────────────────────── */
+@theme {
+  --font-display: 'Plus Jakarta Sans', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  --color-primary: #E8572A;
+  --color-primary-hover: #D14F25;
+  --color-primary-light: rgba(232, 87, 42, 0.10);
+  --color-primary-light2: rgba(232, 87, 42, 0.18);
+
+  --color-sidebar-bg: #1C1917;
+  --color-sidebar-text: #D6D3D1;
+  --color-sidebar-muted: #78716C;
+  --color-sidebar-hover: rgba(255, 255, 255, 0.06);
+  --color-sidebar-active: rgba(232, 87, 42, 0.15);
+
+  --color-bg: #F5F3EF;
+  --color-surface: #FFFFFF;
+  --color-surface-low: #FAFAF9;
+  --color-surface-border: #E8E4DF;
+  --color-surface-hover: #F0ECE7;
+
+  --color-text: #1C1917;
+  --color-text-muted: #78716C;
+  --color-text-faint: #A8A29E;
+
+  --color-green-bg: #DCFCE7;
+  --color-green-tx: #15803D;
+  --color-amber-bg: #FEF3C7;
+  --color-amber-tx: #92400E;
+  --color-blue-bg: #DBEAFE;
+  --color-blue-tx: #1E40AF;
+  --color-red-bg: #FEE2E2;
+  --color-red-tx: #991B1B;
+  --color-gray-bg: #F3F4F6;
+  --color-gray-tx: #374151;
+
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 18px;
+  --radius-2xl: 24px;
+  --radius-full: 9999px;
+
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.07);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.10);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.14);
+  --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.12);
+}
+
+@layer base {
+  :root {
+    /* Legacy variable support for existing components */
+    --primary: var(--color-primary);
+    --primary-hover: var(--color-primary-hover);
+    --primary-light: var(--color-primary-light);
+    --primary-light2: var(--color-primary-light2);
+    --bg: var(--color-bg);
+    --surface: var(--color-surface);
+    --surface-low: var(--color-surface-low);
+    --surface-border: var(--color-surface-border);
+    --surface-hover: var(--color-surface-hover);
+    --text: var(--color-text);
+    --text-muted: var(--color-text-muted);
+    --text-faint: var(--color-text-faint);
+    --sidebar-width: 248px;
+    
+    --r-xs: var(--radius-xs);
+    --r-sm: var(--radius-sm);
+    --r-md: var(--radius-md);
+    --r-lg: var(--radius-lg);
+    --r-xl: var(--radius-xl);
+    --r-2xl: var(--radius-2xl);
+    --r-full: var(--radius-full);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 14px; scroll-behavior: smooth; }
+  body {
+    font-family: var(--font-body);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  a { text-decoration: none; color: inherit; }
+  button { cursor: pointer; font-family: var(--font-body); border: none; background: none; }
+  input, select, textarea { font-family: var(--font-body); }
+  img { display: block; max-width: 100%; }
+}
+
+@layer utilities {
+  .no-scrollbar { scrollbar-width: none; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+}
+
+/* ── ANIMATIONS ─────────────────────────────────── */
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideInRight {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.95) translateY(10px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(40px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+

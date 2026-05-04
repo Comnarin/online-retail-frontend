@@ -1,0 +1,144 @@
+{
+  "common": {
+    "save": "บันทึก",
+    "cancel": "ยกเลิก",
+    "delete": "ลบ",
+    "edit": "แก้ไข",
+    "create": "สร้าง",
+    "search": "ค้นหา",
+    "loading": "กำลังโหลด...",
+    "error": "เกิดข้อผิดพลาด",
+    "success": "สำเร็จ",
+    "confirmDelete": "ยืนยันการลบ?",
+    "noData": "ไม่มีข้อมูล",
+    "back": "กลับ",
+    "total": "ทั้งหมด",
+    "status": "สถานะ",
+    "actions": "การดำเนินการ",
+    "language": "ภาษา"
+  },
+  "auth": {
+    "login": "เข้าสู่ระบบ",
+    "logout": "ออกจากระบบ",
+    "email": "อีเมล",
+    "password": "รหัสผ่าน",
+    "loginWithLine": "เข้าสู่ระบบด้วย LINE",
+    "invalidCredentials": "อีเมลหรือรหัสผ่านไม่ถูกต้อง",
+    "welcome": "ยินดีต้อนรับกลับมา"
+  },
+  "nav": {
+    "dashboard": "แดชบอร์ด",
+    "products": "สินค้า",
+    "orders": "คำสั่งซื้อ",
+    "customers": "ลูกค้า",
+    "coupons": "คูปอง & โปรโมชัน",
+    "membership": "สมาชิก",
+    "appearance": "การแสดงผล",
+    "settings": "ตั้งค่า",
+    "tenants": "ผู้เช่าระบบ",
+    "analytics": "วิเคราะห์แพลตฟอร์ม",
+    "registry": "ข้อมูลระบบส่วนกลาง",
+    "shop": "ร้านค้า",
+    "cart": "ตะกร้า",
+    "profile": "โปรไฟล์",
+    "orderHistory": "ประวัติคำสั่งซื้อ"
+  },
+  "dashboard": {
+    "title": "แดชบอร์ด",
+    "totalRevenue": "รายได้รวม",
+    "totalOrders": "คำสั่งซื้อทั้งหมด",
+    "totalCustomers": "ลูกค้าทั้งหมด",
+    "totalProducts": "สินค้าทั้งหมด",
+    "recentOrders": "คำสั่งซื้อล่าสุด",
+    "lowStock": "สินค้าใกล้หมด"
+  },
+  "products": {
+    "title": "จัดการสินค้า",
+    "addProduct": "เพิ่มสินค้า",
+    "productName": "ชื่อสินค้า",
+    "sku": "รหัสสินค้า",
+    "price": "ราคา",
+    "stock": "จำนวนในสต็อก",
+    "category": "หมวดหมู่",
+    "description": "รายละเอียด",
+    "images": "รูปภาพ",
+    "status": {
+      "active": "เปิดขาย",
+      "inactive": "ปิดขาย",
+      "draft": "ฉบับร่าง"
+    }
+  },
+  "orders": {
+    "title": "ติดตามคำสั่งซื้อ",
+    "orderNumber": "หมายเลขคำสั่งซื้อ",
+    "customer": "ลูกค้า",
+    "date": "วันที่",
+    "amount": "ยอดรวม",
+    "updateStatus": "อัปเดตสถานะ",
+    "status": {
+      "pending": "รอดำเนินการ",
+      "confirmed": "ยืนยันแล้ว",
+      "processing": "กำลังเตรียม",
+      "shipping": "กำลังจัดส่ง",
+      "delivered": "ส่งแล้ว",
+      "cancelled": "ยกเลิก"
+    }
+  },
+  "customers": {
+    "title": "รายชื่อลูกค้า",
+    "name": "ชื่อ",
+    "phone": "เบอร์โทรศัพท์",
+    "joinDate": "วันที่สมัคร",
+    "totalOrders": "คำสั่งซื้อ",
+    "membership": "ระดับสมาชิก"
+  },
+  "coupons": {
+    "title": "คูปอง & โปรโมชัน",
+    "addCoupon": "เพิ่มคูปอง",
+    "code": "รหัสคูปอง",
+    "discount": "ส่วนลด",
+    "type": {
+      "percent": "เปอร์เซ็นต์",
+      "fixed": "จำนวนคงที่"
+    },
+    "minOrder": "ยอดสั่งซื้อขั้นต่ำ",
+    "expiry": "วันหมดอายุ",
+    "usageLimit": "จำกัดการใช้",
+    "usedCount": "ใช้แล้ว"
+  },
+  "appearance": {
+    "title": "ตั้งค่าหน้าตาร้าน",
+    "storeName": "ชื่อร้าน",
+    "storeTagline": "คำอธิบายสั้น",
+    "primaryColor": "สีหลัก",
+    "logo": "โลโก้",
+    "banner": "แบนเนอร์",
+    "fontFamily": "ฟอนต์"
+  },
+  "liff": {
+    "addToCart": "เพิ่มในตะกร้า",
+    "buyNow": "ซื้อเลย",
+    "checkout": "ชำระเงิน",
+    "cartEmpty": "ตะกร้าสินค้าว่าง",
+    "points": "แต้ม",
+    "couponCode": "ใส่รหัสคูปอง",
+    "applyCoupon": "ใช้คูปอง",
+    "orderTotal": "ยอดสุทธิ",
+    "shippingAddress": "ที่อยู่จัดส่ง",
+    "myProfile": "ข้อมูลของฉัน",
+    "myOrders": "คำสั่งซื้อของฉัน",
+    "myPoints": "แต้มสะสม",
+    "memberTier": "ระดับสมาชิก"
+  },
+  "tenants": {
+    "title": "จัดการผู้เช่าระบบ",
+    "addTenant": "เพิ่มผู้เช่า",
+    "slug": "ชื่อ URL",
+    "features": "ฟีเจอร์",
+    "enableMembership": "เปิดใช้สมาชิก",
+    "enableCoupon": "เปิดใช้คูปอง",
+    "enablePoints": "เปิดใช้แต้ม",
+    "enableReviews": "เปิดใช้รีวิว",
+    "enableDelivery": "เปิดใช้จัดส่ง"
+  }
+}

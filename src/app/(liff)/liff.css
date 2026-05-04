@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  --liff-bg: #F8F9FA;
+  --liff-surface: #FFFFFF;
+  --liff-primary: #FF5C00;
+  --liff-primary-soft: #FFF2EB;
+  --liff-text: #1A1C1E;
+  --liff-text-muted: #6C727A;
+  --liff-text-faint: #ADB5BD;
+  --liff-accent: #E9ECEF;
+  --liff-radius: 20px;
+  --liff-radius-lg: 32px;
+  --liff-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --liff-shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.08);
+}
+
+.liff-app {
+  background-color: var(--liff-bg);
+  color: var(--liff-text);
+  font-family: 'Outfit', sans-serif;
+  min-height: 100vh;
+  -webkit-tap-highlight-color: transparent;
+  letter-spacing: -0.015em;
+}
+
+.font-display {
+  font-family: 'Outfit', sans-serif;
+}
+
+/* Premium Card */
+.retail-card {
+  background: var(--liff-surface);
+  border-radius: var(--liff-radius);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  box-shadow: var(--liff-shadow);
+  padding: 20px;
+  transition: all 0.2s ease;
+}
+
+.retail-card:active {
+  transform: scale(0.985);
+}
+
+/* Modern Button */
+.btn-primary {
+  background: var(--liff-primary);
+  color: white;
+  height: 54px;
+  border-radius: 16px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 8px 16px rgba(255, 92, 0, 0.2);
+  transition: all 0.2s ease;
+}
+
+.btn-primary:active {
+  transform: scale(0.97);
+}
+
+/* Step Indicator */
+.step-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--liff-accent);
+  transition: all 0.3s ease;
+}
+.step-indicator.active {
+  background: var(--liff-primary);
+  width: 24px;
+  border-radius: 100px;
+}
+
+/* Animations */
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.animate-slide-up {
+  animation: slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Utilities */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }

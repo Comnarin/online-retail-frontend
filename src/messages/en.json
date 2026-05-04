@@ -1,0 +1,144 @@
+{
+  "common": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "create": "Create",
+    "search": "Search",
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "success": "Success",
+    "confirmDelete": "Confirm delete?",
+    "noData": "No data found",
+    "back": "Back",
+    "total": "Total",
+    "status": "Status",
+    "actions": "Actions",
+    "language": "Language"
+  },
+  "auth": {
+    "login": "Sign In",
+    "logout": "Sign Out",
+    "email": "Email",
+    "password": "Password",
+    "loginWithLine": "Sign in with LINE",
+    "invalidCredentials": "Invalid email or password",
+    "welcome": "Welcome back"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "products": "Products",
+    "orders": "Orders",
+    "customers": "Customers",
+    "coupons": "Coupons & Promotions",
+    "membership": "Membership",
+    "appearance": "Appearance",
+    "settings": "Settings",
+    "tenants": "Tenants",
+    "analytics": "Platform Analytics",
+    "registry": "System Registry",
+    "shop": "Shop",
+    "cart": "Cart",
+    "profile": "Profile",
+    "orderHistory": "Order History"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "totalRevenue": "Total Revenue",
+    "totalOrders": "Total Orders",
+    "totalCustomers": "Total Customers",
+    "totalProducts": "Total Products",
+    "recentOrders": "Recent Orders",
+    "lowStock": "Low Stock Alert"
+  },
+  "products": {
+    "title": "Product Management",
+    "addProduct": "Add Product",
+    "productName": "Product Name",
+    "sku": "SKU",
+    "price": "Price",
+    "stock": "Stock",
+    "category": "Category",
+    "description": "Description",
+    "images": "Images",
+    "status": {
+      "active": "Active",
+      "inactive": "Inactive",
+      "draft": "Draft"
+    }
+  },
+  "orders": {
+    "title": "Order Tracking",
+    "orderNumber": "Order Number",
+    "customer": "Customer",
+    "date": "Date",
+    "amount": "Amount",
+    "updateStatus": "Update Status",
+    "status": {
+      "pending": "Pending",
+      "confirmed": "Confirmed",
+      "processing": "Processing",
+      "shipping": "Shipping",
+      "delivered": "Delivered",
+      "cancelled": "Cancelled"
+    }
+  },
+  "customers": {
+    "title": "Customer Directory",
+    "name": "Name",
+    "phone": "Phone",
+    "joinDate": "Join Date",
+    "totalOrders": "Orders",
+    "membership": "Membership Tier"
+  },
+  "coupons": {
+    "title": "Coupons & Promotions",
+    "addCoupon": "Add Coupon",
+    "code": "Coupon Code",
+    "discount": "Discount",
+    "type": {
+      "percent": "Percentage",
+      "fixed": "Fixed Amount"
+    },
+    "minOrder": "Min. Order Amount",
+    "expiry": "Expiry Date",
+    "usageLimit": "Usage Limit",
+    "usedCount": "Times Used"
+  },
+  "appearance": {
+    "title": "Store Appearance",
+    "storeName": "Store Name",
+    "storeTagline": "Tagline",
+    "primaryColor": "Primary Color",
+    "logo": "Logo",
+    "banner": "Banner",
+    "fontFamily": "Font"
+  },
+  "liff": {
+    "addToCart": "Add to Cart",
+    "buyNow": "Buy Now",
+    "checkout": "Checkout",
+    "cartEmpty": "Your cart is empty",
+    "points": "Points",
+    "couponCode": "Enter coupon code",
+    "applyCoupon": "Apply",
+    "orderTotal": "Order Total",
+    "shippingAddress": "Shipping Address",
+    "myProfile": "My Profile",
+    "myOrders": "My Orders",
+    "myPoints": "My Points",
+    "memberTier": "Membership Tier"
+  },
+  "tenants": {
+    "title": "Tenant Management",
+    "addTenant": "Add Tenant",
+    "slug": "URL Slug",
+    "features": "Features",
+    "enableMembership": "Enable Membership",
+    "enableCoupon": "Enable Coupons",
+    "enablePoints": "Enable Points",
+    "enableReviews": "Enable Reviews",
+    "enableDelivery": "Enable Delivery"
+  }
+}
