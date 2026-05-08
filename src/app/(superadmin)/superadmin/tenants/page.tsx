@@ -215,9 +215,25 @@ export default function SuperAdminTenantsPage() {
               </div>
               <button 
                 className="w-8 h-8 flex items-center justify-center rounded-md text-text-faint hover:text-main-text hover:bg-surface border border-transparent hover:border-surface-border transition-all opacity-0 group-hover:opacity-100 focus:opacity-100"
-                onClick={() => {
-                  navigator.clipboard.writeText(tenant.id);
-                  toast.success("Shop ID copied to clipboard");
+                onClick={async () => {
+                  try {
+                    if (navigator.clipboard && window.isSecureContext) {
+                      await navigator.clipboard.writeText(tenant.id);
+                    } else {
+                      const textArea = document.createElement("textarea");
+                      textArea.value = tenant.id;
+                      textArea.style.position = "absolute";
+                      textArea.style.left = "-999999px";
+                      document.body.prepend(textArea);
+                      textArea.select();
+                      document.execCommand("copy");
+                      textArea.remove();
+                    }
+                    toast.success("Shop ID copied to clipboard");
+                  } catch (error) {
+                    toast.error("Failed to copy ID");
+                    console.error(error);
+                  }
                 }}
                 title="Copy ID"
               >
