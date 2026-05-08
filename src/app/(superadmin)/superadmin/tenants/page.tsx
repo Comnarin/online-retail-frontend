@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import { Plus, Search, Building2, Users, Shield, Trash, Loader2, Globe, X, Layers, Zap } from "lucide-react";
+import { Plus, Search, Building2, Users, Shield, Trash, Loader2, Globe, X, Layers, Zap, Copy } from "lucide-react";
 import { tenantsApi, Tenant, User as Admin, TenantFeatures } from "@/lib/api";
 import { toast } from "@/lib/toast";
 import Drawer from "@/components/shared/Drawer";
@@ -208,9 +208,21 @@ export default function SuperAdminTenantsPage() {
         {tenant && (
           <div>
             {/* Shop Info */}
-            <div className="mb-6 p-4 bg-main-bg border border-surface-border rounded-[var(--r-xl)]">
-              <div className="text-[11px] font-bold text-text-faint uppercase tracking-[0.5px] mb-1.5">Shop ID</div>
-              <div className="font-mono text-[13px] text-main-text select-all">{tenant.id}</div>
+            <div className="mb-6 p-4 bg-main-bg border border-surface-border rounded-[var(--r-xl)] flex items-center justify-between group">
+              <div>
+                <div className="text-[11px] font-bold text-text-faint uppercase tracking-[0.5px] mb-1.5">Shop ID</div>
+                <div className="font-mono text-[13px] text-main-text select-all">{tenant.id}</div>
+              </div>
+              <button 
+                className="w-8 h-8 flex items-center justify-center rounded-md text-text-faint hover:text-main-text hover:bg-surface border border-transparent hover:border-surface-border transition-all opacity-0 group-hover:opacity-100 focus:opacity-100"
+                onClick={() => {
+                  navigator.clipboard.writeText(tenant.id);
+                  toast.success("Shop ID copied to clipboard");
+                }}
+                title="Copy ID"
+              >
+                <Copy size={14} />
+              </button>
             </div>
 
             {/* Features */}
