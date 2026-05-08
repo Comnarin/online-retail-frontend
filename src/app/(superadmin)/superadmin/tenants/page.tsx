@@ -24,7 +24,7 @@ export default function SuperAdminTenantsPage() {
   const [drawerOpen, setDrawerOpen]   = useState(false);
   const [createOpen, setCreateOpen]   = useState(false);
   const [step, setStep]               = useState(1);
-  const [newTenant, setNewTenant]     = useState({ name: "", slug: "" });
+  const [newTenant, setNewTenant]     = useState({ name: "" });
   const [newAdmin, setNewAdmin]       = useState({ name: "", email: "", password: "" });
   const [newTenantId, setNewTenantId] = useState<string | null>(null);
   const [addAdminForm, setAddAdminForm] = useState({ name: "", email: "", password: "" });
@@ -75,7 +75,7 @@ export default function SuperAdminTenantsPage() {
 
   const openDrawer = (t: Tenant) => { setTenant(t); setDrawerOpen(true); };
   const closeDrawer = () => { setDrawerOpen(false); setTenant(null); };
-  const resetCreate = () => { setCreateOpen(false); setStep(1); setNewTenant({ name: "", slug: "" }); setNewAdmin({ name: "", email: "", password: "" }); setNewTenantId(null); };
+  const resetCreate = () => { setCreateOpen(false); setStep(1); setNewTenant({ name: "" }); setNewAdmin({ name: "", email: "", password: "" }); setNewTenantId(null); };
   const handleToggle = (key: keyof TenantFeatures) => {
     if (!tenant) return;
     const next = { ...tenant.features, [key]: !tenant.features[key] };
@@ -170,7 +170,9 @@ export default function SuperAdminTenantsPage() {
                       <div className="w-[34px] h-[34px] rounded-md bg-surface-border text-main-text flex items-center justify-center font-extrabold text-[12px] uppercase shrink-0">{t.name.slice(0, 1)}</div>
                       <div>
                         <div className="text-[13px] font-semibold text-main-text leading-[1.3]">{t.name}</div>
-                        <div className="text-[11px] text-text-faint leading-[1.3]">/{t.slug}</div>
+                        <div className="flex items-center mt-0.5">
+                          <span className="text-[10px] font-mono text-text-muted bg-main-bg border border-surface-border px-1 py-[2px] rounded leading-none truncate max-w-[120px]" title={t.id}>{t.id}</span>
+                        </div>
                       </div>
                     </div>
                   </td>
@@ -200,11 +202,17 @@ export default function SuperAdminTenantsPage() {
       </div>
 
       {/* Shop Detail Drawer */}
-      <Drawer open={drawerOpen} onClose={closeDrawer} title={tenant?.name || "Shop"} subtitle={tenant ? `/${tenant.slug}` : ""} icon={<Building2 size={18} />} size="lg"
+      <Drawer open={drawerOpen} onClose={closeDrawer} title={tenant?.name || "Shop"} subtitle={tenant ? "Shop Details" : ""} icon={<Building2 size={18} />} size="lg"
         footer={<div className="flex justify-end w-full"><button className="inline-flex items-center gap-[6px] px-4 py-2 rounded-md text-[13px] font-semibold cursor-pointer transition-all active:scale-[0.975] bg-transparent text-text-muted hover:bg-surface-hover hover:text-main-text" onClick={closeDrawer}>Close</button></div>}
       >
         {tenant && (
           <div>
+            {/* Shop Info */}
+            <div className="mb-6 p-4 bg-main-bg border border-surface-border rounded-[var(--r-xl)]">
+              <div className="text-[11px] font-bold text-text-faint uppercase tracking-[0.5px] mb-1.5">Shop ID</div>
+              <div className="font-mono text-[13px] text-main-text select-all">{tenant.id}</div>
+            </div>
+
             {/* Features */}
             <div className="mb-6">
               <div className="text-[11px] font-bold text-text-faint uppercase tracking-[0.5px] mb-3 flex items-center gap-1.5">
@@ -304,14 +312,10 @@ export default function SuperAdminTenantsPage() {
                     <label className="text-[11px] font-bold text-text-muted uppercase tracking-[0.5px]">Shop Name</label>
                     <input className="w-full h-10 bg-surface border border-surface-border rounded-md px-3 text-[13px] font-medium text-main-text outline-none transition-colors focus:border-primary focus:shadow-[0_0_0_3px_var(--primary-light)] placeholder:text-text-faint appearance-none" placeholder="e.g. Fashion Store" value={newTenant.name} onChange={e => setNewTenant({ ...newTenant, name: e.target.value })} />
                   </div>
-                  <div className="flex flex-col gap-1.5 mb-6">
-                    <label className="text-[11px] font-bold text-text-muted uppercase tracking-[0.5px]">URL Slug</label>
-                    <input className="w-full h-10 bg-surface border border-surface-border rounded-md px-3 text-[13px] font-medium text-main-text outline-none transition-colors focus:border-primary focus:shadow-[0_0_0_3px_var(--primary-light)] placeholder:text-text-faint appearance-none" placeholder="fashion-store" value={newTenant.slug} onChange={e => setNewTenant({ ...newTenant, slug: e.target.value.toLowerCase().replace(/\s+/g, "-") })} />
-                  </div>
                   <div className="flex justify-end gap-2 p-5 bg-surface-low border-t border-surface-border -mx-6 mt-2">
                     <button className="inline-flex items-center gap-[6px] px-4 py-2 rounded-md text-[13px] font-semibold cursor-pointer transition-all active:scale-[0.975] bg-transparent text-text-muted hover:bg-surface-hover hover:text-main-text" onClick={resetCreate}>Cancel</button>
-                    <button className="inline-flex items-center gap-[6px] px-4 py-2 rounded-md text-[13px] font-semibold cursor-pointer transition-all active:scale-[0.975] disabled:opacity-50 disabled:cursor-not-allowed bg-primary text-white hover:bg-primary-hover hover:shadow-[0_4px_12px_rgba(232,87,42,0.30)]" onClick={() => createTenantMutation.mutate(newTenant)}
-                      disabled={createTenantMutation.isPending || !newTenant.name || !newTenant.slug}>
+                    <button className="inline-flex items-center gap-[6px] px-4 py-2 rounded-md text-[13px] font-semibold cursor-pointer transition-all active:scale-[0.975] disabled:opacity-50 disabled:cursor-not-allowed bg-primary text-white hover:bg-primary-hover hover:shadow-[0_4px_12px_rgba(232,87,42,0.30)]" onClick={() => createTenantMutation.mutate(newTenant as any)}
+                      disabled={createTenantMutation.isPending || !newTenant.name}>
                       {createTenantMutation.isPending ? <Loader2 size={15} className="animate-spin" /> : "Continue →"}
                     </button>
                   </div>
